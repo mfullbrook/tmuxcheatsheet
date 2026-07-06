@@ -1,0 +1,19 @@
+# tmuxlab
+
+> Interactive tmux cheat sheet, tutorial, and config generator. All keybindings and commands verified against the current tmux release (3.6). Free and open source.
+
+## Core pages
+
+- [Cheat sheet](https://tmuxlab.dev/): every default tmux keybinding and command, searchable, organized by sessions/windows/panes/copy-mode
+- [Commands by task](https://tmuxlab.dev/commands): one page per real task (split pane, copy paste, kill session, scroll, …) with keybinding, command, and gotchas
+- [Tutorial](https://tmuxlab.dev/tutorial): 5-lesson track plus an interactive in-browser tmux playground
+- [Config generator](https://tmuxlab.dev/config/generator): builds a commented .tmux.conf
+- [Guides](https://tmuxlab.dev/guides): sane config line-by-line, fixing colors ($TERM/RGB), tmux+neovim checkhealth fixes, tmux vs zellij, AI coding agents in tmux
+
+## Key facts
+
+- Default prefix: Ctrl-b. Split panes: prefix % (left/right), prefix " (top/bottom)
+- Detach: prefix d. Reattach: tmux attach -t name. Attach-or-create: tmux new -As name
+- Scroll/copy mode: prefix [. Paste: prefix ]
+- System clipboard: set -g set-clipboard on (OSC 52, works over SSH)
+- Sane config baseline: mouse on, history-limit 50000, default-terminal "tmux-256color", terminal-features ",*:RGB", escape-time 10, focus-events on

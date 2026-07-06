@@ -1,6 +1,7 @@
 "use client";
 
 import { useTmuxSite } from "./KeyboardProvider";
+import { useConfig } from "./ConfigProvider";
 import { copyText } from "@/lib/copy";
 import type { CategoryId } from "@/lib/data/types";
 
@@ -27,7 +28,10 @@ export function KeyCombo({
     <span className="whitespace-nowrap">
       {withPrefix && (
         <>
-          <kbd className="text-accent border-accent-dim">{prefix}</kbd>
+          {/* min-width so short↔long prefix swaps (C-b ↔ C-Space) don't jitter */}
+          <kbd className="text-accent border-accent-dim inline-block min-w-[4ch] text-center">
+            {prefix}
+          </kbd>
           <span className="text-faint mx-1">then</span>
         </>
       )}
@@ -76,7 +80,10 @@ export function CopyButton({
 
 /** Choose your prefix — re-renders every keybinding on the site. */
 export function PrefixPicker() {
-  const { prefix, setPrefix, showMessage } = useTmuxSite();
+  const { prefix, showMessage } = useTmuxSite();
+  // Prefix writes go through ConfigProvider (the storage owner); it pushes
+  // the effective prefix back into KeyboardProvider's display state.
+  const { setPrefix } = useConfig();
   const options = ["C-b", "C-a", "C-Space", "`"];
   return (
     <div className="inline-flex items-center gap-2 text-[13px]">
