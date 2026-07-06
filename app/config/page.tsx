@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 };
 
 const LINKS = [
+  ["/config/explain", "Explain my .tmux.conf", "paste your config: line-by-line annotations + stale-advice warnings"],
   ["/config/generator", "Interactive .tmux.conf generator", "toggle options, get a commented config"],
   ["/guides/sane-tmux-config", "The sane tmux config", "20 lines, explained line by line"],
   ["/guides/tmux-colors", "Fix your colors", "$TERM, true color, and the decision tree"],
