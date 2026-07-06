@@ -7,7 +7,7 @@ import { optionComment } from "@/lib/data/option-docs";
 
 type Clipboard = "osc52" | "pbcopy" | "xclip" | "wl-copy";
 
-interface Options {
+export interface Options {
   prefix: "C-b" | "C-a" | "C-Space";
   mouse: boolean;
   viMode: boolean;
@@ -37,7 +37,7 @@ const DEFAULTS: Options = {
   plugins: { resurrect: false, continuum: false, yank: false },
 };
 
-function generate(o: Options): string {
+export function generate(o: Options): string {
   const L: string[] = [];
   L.push("# ~/.tmux.conf — generated with tmuxlab.dev/config/generator");
   L.push("# every line explained; delete anything you don't want\n");
