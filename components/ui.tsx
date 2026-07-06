@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useTmuxSite } from "./KeyboardProvider";
 import { useConfig } from "./ConfigProvider";
 import { copyText } from "@/lib/copy";
@@ -107,6 +108,12 @@ export function PrefixPicker() {
           </button>
         ))}
       </div>
+      <Link
+        href="/config/explain"
+        className="text-faint hover:text-accent whitespace-nowrap"
+      >
+        or paste your whole config →
+      </Link>
     </div>
   );
 }

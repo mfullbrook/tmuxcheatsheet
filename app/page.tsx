@@ -19,13 +19,13 @@ export default function Home() {
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight cursor-blink">
           tmux cheat sheet
         </h1>
-        <p className="text-muted mt-3 max-w-2xl">
+        <p className="print-hidden text-muted mt-3 max-w-2xl">
           Every default keybinding and command — searchable, copyable, and
           honest about the gotchas. Press <kbd>/</kbd> to search anything.
           Press <kbd>Ctrl</kbd>+<kbd>b</kbd> then <kbd>?</kbd> — this site
           speaks tmux.
         </p>
-        <div className="flex flex-wrap gap-x-5 gap-y-1 mt-4 text-[12.5px]">
+        <div className="print-hidden flex flex-wrap gap-x-5 gap-y-1 mt-4 text-[12.5px]">
           <span className="text-faint">
             verified against <span className="text-accent">tmux 3.6</span>{" "}
             defaults
@@ -44,7 +44,7 @@ export default function Home() {
 
       <CheatSheet />
 
-      <section className="mt-16 border-t border-edge pt-8">
+      <section className="print-hidden mt-16 border-t border-edge pt-8">
         <h2 className="text-lg font-semibold mb-4">
           The stuff cheat sheets can&apos;t fix
         </h2>

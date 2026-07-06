@@ -52,6 +52,7 @@ export const SESSION_COPY_MISC_PAGES: CommandPage[] = [
   },
   {
     slug: "detach",
+    bindingIds: ["detach"],
     title: "How to detach from a tmux session",
     metaDescription:
       "Detach from tmux with prefix d — everything keeps running in the background. Reattach any time with tmux attach. Detach ≠ quit.",
@@ -116,6 +117,7 @@ export const SESSION_COPY_MISC_PAGES: CommandPage[] = [
   },
   {
     slug: "rename-session",
+    bindingIds: ["rename-session"],
     title: "How to rename a tmux session",
     metaDescription:
       "Rename a tmux session with prefix $ from inside, or tmux rename-session -t old new from the shell.",
@@ -134,6 +136,7 @@ export const SESSION_COPY_MISC_PAGES: CommandPage[] = [
   },
   {
     slug: "switch-sessions",
+    bindingIds: ["choose-session"],
     title: "How to switch between tmux sessions",
     metaDescription:
       "Switch tmux sessions without detaching: prefix s for the interactive tree, prefix ( and ) to cycle, prefix L to toggle, or a popup fzf switcher.",
@@ -181,6 +184,7 @@ export const SESSION_COPY_MISC_PAGES: CommandPage[] = [
   // ── Copy mode / scrolling / clipboard ─────────────────────────────────
   {
     slug: "scroll",
+    bindingIds: ["enter-copy-mode"],
     title: "How to scroll in tmux",
     metaDescription:
       "Scroll in tmux with prefix [ then PgUp/arrows, or enable mouse wheel scrolling with set -g mouse on. Raise history-limit for more scrollback.",
@@ -208,6 +212,7 @@ export const SESSION_COPY_MISC_PAGES: CommandPage[] = [
   },
   {
     slug: "copy-paste",
+    bindingIds: ["enter-copy-mode", "copy-begin-selection", "copy-copy-selection", "paste-buffer"],
     title: "How to copy and paste in tmux",
     metaDescription:
       "Copy and paste in tmux: enter copy mode with prefix [, select with Space, copy with Enter, paste with prefix ]. Plus system clipboard integration.",
@@ -272,6 +277,7 @@ bind -T copy-mode-vi y send -X copy-pipe-and-cancel "wl-copy"`,
   },
   {
     slug: "search-scrollback",
+    bindingIds: ["copy-search-backward", "copy-search-next"],
     title: "How to search the scrollback in tmux",
     metaDescription:
       "Search tmux output: prefix [ to enter copy mode, then / to search down and ? to search up, n/N to repeat. Save scrollback with capture-pane.",
@@ -339,6 +345,7 @@ bind -T copy-mode-vi y send -X copy-pipe-and-cancel "wl-copy"`,
   },
   {
     slug: "command-prompt",
+    bindingIds: ["command-prompt"],
     title: "How to use the tmux command prompt",
     metaDescription:
       "Every tmux keybinding is a shortcut for a command. Open the prompt with prefix :, use tab completion, and stop memorizing keys.",
@@ -361,6 +368,7 @@ bind -T copy-mode-vi y send -X copy-pipe-and-cancel "wl-copy"`,
   },
   {
     slug: "list-keys",
+    bindingIds: ["list-keys"],
     title: "How to see all tmux keybindings",
     metaDescription:
       "List every tmux keybinding with prefix ? or tmux list-keys -N, and ask what a specific key does with prefix /.",
@@ -452,6 +460,7 @@ tmux attach -t dev`,
   },
   {
     slug: "nested-tmux",
+    bindingIds: ["send-prefix"],
     title: "How to use tmux inside tmux (nested sessions)",
     metaDescription:
       "Run tmux over SSH inside local tmux: send the prefix twice to control the inner session, or set up a keybinding toggle to switch control.",

@@ -8,6 +8,7 @@ import { COMMAND_PAGES } from "@/lib/data/command-pages";
 import { SITE_WINDOWS } from "@/lib/site-nav";
 import { bestScore } from "@/lib/search";
 import { useTmuxSite } from "./KeyboardProvider";
+import { useOptionalConfig } from "./ConfigProvider";
 import { copyText } from "@/lib/copy";
 
 interface Item {
@@ -32,8 +33,16 @@ export function CommandPalette() {
 function PaletteDialog() {
   const router = useRouter();
   const { setPaletteOpen, prefix, showMessage } = useTmuxSite();
+  const config = useOptionalConfig();
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(0);
+
+  // Overlay-aware display + search: when a config is active (and defaults
+  // aren't toggled on), bindings match and show the user's effective keys.
+  const ov =
+    config && config.status === "active" && !config.showDefaults
+      ? config.overlay
+      : null;
 
   const results = useMemo<Item[]>(() => {
     const items: Item[] = [];
@@ -51,12 +60,26 @@ function PaletteDialog() {
       }
     }
     for (const b of ALL_BINDINGS) {
+      const entry = ov?.entries.get(b.id);
+      const changed =
+        entry &&
+        (entry.status === "rebound" ||
+          entry.status === "remapped" ||
+          entry.status === "modified");
       const s = bestScore(query, {
         text: b.label,
-        extra: [...(b.aliases ?? []), b.command, b.keys],
+        extra: [
+          ...(b.aliases ?? []),
+          b.command,
+          b.keys,
+          ...(changed ? entry.userKeys : []),
+        ],
       });
       if (s > 0 || (!query && b.essential)) {
-        const keys = b.table === "prefix" ? `${prefix} ${b.keys}` : b.keys;
+        const effKeys = changed ? entry.userKeys.join(" ") : b.keys;
+        const withPrefix = b.table === "prefix" && !(changed && entry.noPrefix);
+        let keys = withPrefix ? `${prefix} ${effKeys}` : effKeys;
+        if (entry?.status === "unbound") keys = `${keys} (unbound)`;
         items.push({
           kind: "binding",
           title: b.label,
@@ -84,7 +107,7 @@ function PaletteDialog() {
       }
     }
     return items.sort((a, b) => b.score - a.score).slice(0, 12);
-  }, [query, prefix]);
+  }, [query, prefix, ov]);
 
   function execute(item: Item) {
     if (item.action === "copy" && item.copyText) {

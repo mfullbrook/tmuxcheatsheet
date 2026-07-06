@@ -37,6 +37,12 @@ export interface AtomOverlay {
   userKey?: string;
   /** True when the user's binding needs no prefix (root table, -n). */
   noPrefix?: boolean;
+  /**
+   * For status "unbound": true when the unbind came from `unbind -a`
+   * (collapsed-group rendering, T9) rather than an explicit `unbind <key>`
+   * (individually struck per contract).
+   */
+  viaUnbindAll?: boolean;
   annotations: string[];
 }
 
@@ -48,6 +54,10 @@ export interface BindingOverlay {
   atoms: AtomOverlay[];
   /** The user's effective key(s) for this entry, deduplicated. */
   userKeys: string[];
+  /** True when the user's matching binding needs no prefix (root, -n). */
+  noPrefix: boolean;
+  /** For status "unbound": every unbound atom was wiped by `unbind -a`. */
+  viaUnbindAll: boolean;
   annotations: string[];
 }
 
@@ -201,8 +211,11 @@ export function buildOverlay(
     const ov = atomOverlays.get(atom)!;
     if (ov.status !== "default" || claimed.has(atom)) continue;
     const k = `${atom.table} ${canonicalKey(atom.key)}`;
-    if (parsed.unbinds.has(k) || parsed.unbindAllTables.has(atom.table)) {
+    if (parsed.unbinds.has(k)) {
       ov.status = "unbound";
+    } else if (parsed.unbindAllTables.has(atom.table)) {
+      ov.status = "unbound";
+      ov.viaUnbindAll = true;
     }
   }
 
@@ -224,11 +237,17 @@ export function buildOverlay(
       ),
     ];
     const annotations = [...new Set(rowAtoms.flatMap((a) => a.annotations))];
+    const unboundAtoms = rowAtoms.filter((a) => a.status === "unbound");
     entries.set(b.id, {
       bindingId: b.id,
       status,
       atoms: rowAtoms,
       userKeys,
+      noPrefix: rowAtoms.length > 0 && rowAtoms.every((a) => a.noPrefix),
+      viaUnbindAll:
+        status === "unbound" &&
+        unboundAtoms.length > 0 &&
+        unboundAtoms.every((a) => a.viaUnbindAll),
       annotations,
     });
   }

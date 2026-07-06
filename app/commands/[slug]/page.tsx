@@ -5,6 +5,7 @@ import { COMMAND_PAGES, getCommandPage } from "@/lib/data/command-pages";
 import { CodeBlock } from "@/components/CodeBlock";
 import { InlineCode } from "@/components/Prose";
 import { CopyLine } from "@/components/CopyLine";
+import { YourBinding } from "@/components/YourBinding";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -78,6 +79,7 @@ export default async function CommandPage({ params }: Props) {
           </p>
         )}
         <CopyLine text={page.tldr.command} />
+        <YourBinding bindingIds={page.bindingIds} />
       </div>
 
       {page.sections.map((s) => (

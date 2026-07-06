@@ -40,7 +40,7 @@ export function StatusBar() {
   );
 
   return (
-    <div className="fixed bottom-0 inset-x-0 z-40 h-10 border-t border-edge bg-surface text-[13px] select-none">
+    <div className="print-hidden fixed bottom-0 inset-x-0 z-40 h-10 border-t border-edge bg-surface text-[13px] select-none">
       {message ? (
         <div className="h-full flex items-center px-3 bg-[var(--cat-copy)] text-black font-medium">
           {message}

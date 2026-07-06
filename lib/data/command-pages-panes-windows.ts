@@ -3,6 +3,7 @@ import type { CommandPage } from "./command-page-types";
 export const PANE_WINDOW_PAGES: CommandPage[] = [
   {
     slug: "split-pane",
+    bindingIds: ["split-pane-right", "split-pane-down"],
     title: "How to split a pane in tmux",
     metaDescription:
       "Split a tmux window into panes: prefix % for side-by-side, prefix \" for stacked. Plus how to rebind to | and -, and split in the current directory.",
@@ -31,6 +32,7 @@ bind - split-window -v -c "#{pane_current_path}"`,
   },
   {
     slug: "switch-panes",
+    bindingIds: ["select-pane-arrows", "display-panes"],
     title: "How to switch between panes in tmux",
     metaDescription:
       "Move between tmux panes with prefix + arrow keys, jump by number with prefix q, or set up Alt+arrow and vim-style navigation without the prefix.",
@@ -62,6 +64,7 @@ bind l select-pane -R`,
   },
   {
     slug: "resize-pane",
+    bindingIds: ["resize-pane-coarse", "resize-pane-fine"],
     title: "How to resize a pane in tmux",
     metaDescription:
       "Resize tmux panes with prefix + Ctrl/Alt arrows, exact sizes with resize-pane -x/-y, drag borders with the mouse, or snap to a preset layout.",
@@ -88,6 +91,7 @@ bind l select-pane -R`,
   },
   {
     slug: "zoom-pane",
+    bindingIds: ["zoom-pane"],
     title: "How to zoom (maximize) a pane in tmux",
     metaDescription:
       "Toggle a tmux pane to full screen with prefix z. The layout is preserved and restored when you zoom back out.",
@@ -110,6 +114,7 @@ bind l select-pane -R`,
   },
   {
     slug: "swap-panes",
+    bindingIds: ["swap-pane-up", "swap-pane-down"],
     title: "How to swap and rearrange panes in tmux",
     metaDescription:
       "Swap tmux panes with prefix { and }, rotate them all with Ctrl-o, or use swap-pane with marks to move panes precisely between positions.",
@@ -132,6 +137,7 @@ bind l select-pane -R`,
   },
   {
     slug: "close-pane",
+    bindingIds: ["kill-pane"],
     title: "How to close a pane in tmux",
     metaDescription:
       "Close a tmux pane by exiting its shell (exit or Ctrl-d), or force-kill it with prefix x. Closing the last pane closes the window.",
@@ -154,6 +160,7 @@ bind l select-pane -R`,
   },
   {
     slug: "break-pane",
+    bindingIds: ["break-pane"],
     title: "How to move a pane to its own window in tmux",
     metaDescription:
       "Break a tmux pane out into a new window with prefix !, and pull it back with join-pane. Move panes between windows precisely with marks.",
@@ -239,6 +246,7 @@ bind C-j display-popup -E "tmux ls -F '#S' | fzf | xargs tmux switch-client -t"`
   },
   {
     slug: "new-window",
+    bindingIds: ["new-window"],
     title: "How to create a new window in tmux",
     metaDescription:
       "Create a tmux window (tab) with prefix c, name it at creation, open it in the current directory, and control where it lands in the window list.",
@@ -262,6 +270,7 @@ bind C-j display-popup -E "tmux ls -F '#S' | fzf | xargs tmux switch-client -t"`
   },
   {
     slug: "rename-window",
+    bindingIds: ["rename-window"],
     title: "How to rename a window in tmux",
     metaDescription:
       "Rename a tmux window with prefix , — and stop tmux from renaming it back with automatic-rename. Plus renaming from the shell and scripts.",
@@ -286,6 +295,7 @@ set -g allow-rename off   # stop programs renaming via escape sequences`,
   },
   {
     slug: "switch-windows",
+    bindingIds: ["next-window", "previous-window", "last-window", "select-window-index"],
     title: "How to switch between windows in tmux",
     metaDescription:
       "Move between tmux windows with prefix n/p, jump by number, toggle the last window with prefix l, or pick from an interactive list with prefix w.",
@@ -311,6 +321,7 @@ bind -n M-3 select-window -t 3`,
   },
   {
     slug: "move-window",
+    bindingIds: ["move-window"],
     title: "How to move and reorder windows in tmux",
     metaDescription:
       "Reorder tmux windows with swap-window, move them to specific indexes with prefix . , and renumber to close gaps with move-window -r.",
@@ -335,6 +346,7 @@ bind -r ">" swap-window -d -t +1`,
   },
   {
     slug: "kill-window",
+    bindingIds: ["kill-window"],
     title: "How to close a window in tmux",
     metaDescription:
       "Close a tmux window by exiting its last pane, or force-kill it with prefix &. Kill every other window with kill-window -a.",

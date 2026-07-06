@@ -76,6 +76,14 @@ export function useConfig(): ConfigContextValue {
   return ctx;
 }
 
+/**
+ * Like useConfig, but returns null outside ConfigProvider — for components
+ * (e.g. the palette, mounted by KeyboardProvider) that render above it.
+ */
+export function useOptionalConfig(): ConfigContextValue | null {
+  return useContext(Ctx);
+}
+
 export function ConfigProvider({ children }: { children: React.ReactNode }) {
   const { setPrefix: setDisplayPrefix } = useTmuxSite();
   const [parsed, setParsed] = useState<StoredConfig | null>(null);

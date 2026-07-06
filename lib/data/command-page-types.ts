@@ -20,6 +20,12 @@ export interface CommandPage {
     command: string;
   };
   sections: CommandPageSection[];
+  /**
+   * Dataset binding ids (lib/data/keybindings.ts) this page's keys
+   * correspond to — the crosswalk that lets the "your binding" line render
+   * when a parsed config overrides them. Conservative: only clear matches.
+   */
+  bindingIds?: string[];
   /** Ready-to-paste .tmux.conf lines, if relevant. */
   conf?: string;
   /** Slugs of related pages. */
