@@ -1,26 +1,226 @@
 @import "tailwindcss";
 
+/* ── Theme tokens ─────────────────────────────────────────────────────────
+   Dark is the default (terminal audience). Light is opt-in via
+   prefers-color-scheme or data-theme override.                            */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0b0e14;
+  --bg-surface: #10141c;
+  --bg-raised: #161c27;
+  --bg-hover: #1a2130;
+  --border: #222b39;
+  --border-bright: #334054;
+  --text: #cbd6e2;
+  --text-muted: #8b9bb0;
+  --text-faint: #5d6d82;
+  --accent: #3ee08a;
+  --accent-dim: #2aa868;
+  --selection: #1f3d2e;
+
+  /* ANSI-ish category hues */
+  --cat-sessions: #3ee08a;
+  --cat-windows: #62aaff;
+  --cat-panes: #c98bfa;
+  --cat-resize: #ffab5e;
+  --cat-copy: #e8d176;
+  --cat-buffers: #55d3dc;
+  --cat-misc: #8b9bb0;
+}
+
+:root[data-theme="light"] {
+  --bg: #f7f8fa;
+  --bg-surface: #ffffff;
+  --bg-raised: #eef1f5;
+  --bg-hover: #e7ebf1;
+  --border: #d7dde6;
+  --border-bright: #b9c3d1;
+  --text: #1d2735;
+  --text-muted: #4d5d72;
+  --text-faint: #7a8aa0;
+  --accent: #0c9d5b;
+  --accent-dim: #0a7d49;
+  --selection: #c9f0dc;
+
+  --cat-sessions: #0c9d5b;
+  --cat-windows: #1a6fd4;
+  --cat-panes: #8f3fd6;
+  --cat-resize: #c26a12;
+  --cat-copy: #a08409;
+  --cat-buffers: #0d8b94;
+  --cat-misc: #4d5d72;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--bg-surface);
+  --color-raised: var(--bg-raised);
+  --color-hover: var(--bg-hover);
+  --color-edge: var(--border);
+  --color-edge-bright: var(--border-bright);
+  --color-fg: var(--text);
+  --color-muted: var(--text-muted);
+  --color-faint: var(--text-faint);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-cat-sessions: var(--cat-sessions);
+  --color-cat-windows: var(--cat-windows);
+  --color-cat-panes: var(--cat-panes);
+  --color-cat-resize: var(--cat-resize);
+  --color-cat-copy: var(--cat-copy);
+  --color-cat-buffers: var(--cat-buffers);
+  --color-cat-misc: var(--cat-misc);
+  --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+::selection {
+  background: var(--selection);
+}
+
+html {
+  scrollbar-gutter: stable;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Prose (guides) switch to sans for long-form readability */
+.prose-body {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+}
+
+/* ── Terminal chrome primitives ─────────────────────────────────────── */
+
+/* Blinking block cursor */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.cursor-blink::after {
+  content: "▊";
+  color: var(--accent);
+  animation: blink 1.1s step-end infinite;
+  margin-left: 2px;
+}
+
+kbd {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  font-size: 0.85em;
+  background: var(--bg-raised);
+  border: 1px solid var(--border-bright);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 1px 6px;
+  white-space: nowrap;
+  color: var(--text);
+}
+
+/* Focus ring that fits the aesthetic */
+:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* ── Print stylesheet ──────────────────────────────────────────────────
+   The cheat sheet prints legibly to ≤2 pages: chrome hidden, light
+   background / dark text, compact two-column layout. Same rows and state
+   as on screen — overlay keys, strike-throughs, and "Your other bindings"
+   all print as shown. Hooks: .print-hidden (chrome), .cheatsheet-grid.   */
+
+@media print {
+  :root,
+  :root[data-theme="light"] {
+    --bg: #fff;
+    --bg-surface: #fff;
+    --bg-raised: #fff;
+    --bg-hover: #fff;
+    --border: #bbb;
+    --border-bright: #999;
+    --text: #000;
+    --text-muted: #333;
+    --text-faint: #555;
+    --accent: #000;
+    --accent-dim: #555;
+    --cat-sessions: #000;
+    --cat-windows: #000;
+    --cat-panes: #000;
+    --cat-resize: #000;
+    --cat-copy: #000;
+    --cat-buffers: #000;
+    --cat-misc: #000;
+  }
+
+  .print-hidden {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 9px;
+    line-height: 1.35;
+  }
+
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  body > div {
+    padding-bottom: 0 !important;
+  }
+
+  .cursor-blink::after {
+    content: none;
+  }
+
+  kbd {
+    background: #fff;
+    border-color: #999;
+    color: #000;
+    padding: 0 3px;
+  }
+
+  /* Compact two-column sheet regardless of viewport width. */
+  .cheatsheet-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px 12px !important;
+  }
+  .cheatsheet-grid section,
+  .cheatsheet-grid a,
+  .cheatsheet-grid > * {
+    break-inside: avoid;
+  }
+  .cheatsheet-grid .py-1\.5 {
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+  }
+
+  /* Keep strike-through state visible on paper. */
+  .line-through {
+    text-decoration: line-through !important;
+  }
+
+  /* Print the collapsed unbind-all group as-is (browser support for
+     printing open <details> varies; the summary count always prints). */
+  a,
+  a:visited {
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

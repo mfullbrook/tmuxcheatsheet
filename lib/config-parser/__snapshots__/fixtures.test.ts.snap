@@ -1,0 +1,636 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`explain-output snapshots > locks the per-line annotations for catppuccin-example.conf 1`] = `
+[
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 1,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 2,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 3,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "mouse = on",
+    ],
+    "kind": "option",
+    "lineNo": 4,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "default-terminal = tmux-256color — the $TERM tmux advertises",
+    ],
+    "kind": "option",
+    "lineNo": 5,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 6,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 7,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "plugin option @catppuccin_flavor = mocha — plugin settings",
+    ],
+    "kind": "recognized",
+    "lineNo": 8,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "plugin option @catppuccin_window_status_style = rounded — plugin settings",
+    ],
+    "kind": "recognized",
+    "lineNo": 9,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 10,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 11,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "plugin: catppuccin/tmux#v2.3.0 — plugin settings",
+    ],
+    "kind": "recognized",
+    "lineNo": 12,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "plugin: tmux-plugins/tpm — plugin settings",
+    ],
+    "kind": "recognized",
+    "lineNo": 13,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "plugin: tmux-plugins/tmux-cpu — plugin settings",
+    ],
+    "kind": "recognized",
+    "lineNo": 14,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "plugin: tmux-plugins/tmux-battery — plugin settings",
+    ],
+    "kind": "recognized",
+    "lineNo": 15,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 16,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 17,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "runs a plugin script — plugin settings",
+    ],
+    "kind": "recognized",
+    "lineNo": 18,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 19,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 20,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 21,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "status-right-length — status styling (not interpreted)",
+    ],
+    "kind": "recognized",
+    "lineNo": 22,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "status-left-length — status styling (not interpreted)",
+    ],
+    "kind": "recognized",
+    "lineNo": 23,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "status-left — status styling (not interpreted)",
+    ],
+    "kind": "recognized",
+    "lineNo": 24,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "status-right — status styling (not interpreted)",
+    ],
+    "kind": "recognized",
+    "lineNo": 25,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "status-right — status styling (not interpreted)",
+    ],
+    "kind": "recognized",
+    "lineNo": 26,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "status-right — status styling (not interpreted)",
+    ],
+    "kind": "recognized",
+    "lineNo": 27,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "status-right — status styling (not interpreted)",
+    ],
+    "kind": "recognized",
+    "lineNo": 28,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "status-right — status styling (not interpreted)",
+    ],
+    "kind": "recognized",
+    "lineNo": 29,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 30,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "runs a plugin script — plugin settings",
+    ],
+    "kind": "recognized",
+    "lineNo": 31,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "runs a plugin script — plugin settings",
+    ],
+    "kind": "recognized",
+    "lineNo": 32,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 33,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "runs a plugin script — plugin settings",
+    ],
+    "kind": "recognized",
+    "lineNo": 34,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 35,
+    "warnings": [],
+  },
+]
+`;
+
+exports[`explain-output snapshots > locks the per-line annotations for sensible-example.conf 1`] = `
+[
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 1,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "escape-time = 0 — ms tmux waits after Escape",
+    ],
+    "kind": "option",
+    "lineNo": 2,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 3,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 4,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "history-limit = 50000 — scrollback lines kept per pane",
+    ],
+    "kind": "option",
+    "lineNo": 5,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 6,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 7,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "sets \`display-time\` to \`4000\` (not interpreted)",
+    ],
+    "kind": "recognized",
+    "lineNo": 8,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 9,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 10,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "sets \`status-interval\` to \`5\` (not interpreted)",
+    ],
+    "kind": "recognized",
+    "lineNo": 11,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 12,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 13,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "default-command via reattach-to-user-namespace",
+    ],
+    "kind": "recognized",
+    "lineNo": 14,
+    "warnings": [
+      "stale-1: reattach-to-user-namespace has been unnecessary since tmux 2.6 (2017)",
+    ],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 15,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 16,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "default-terminal = screen-256color — the $TERM tmux advertises",
+    ],
+    "kind": "option",
+    "lineNo": 17,
+    "warnings": [
+      "stale-2: \`screen-256color\` is outdated as default-terminal — use \`tmux-256color\` (italics + modern features)",
+    ],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 18,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 19,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 20,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "sets \`status-keys\` to \`emacs\` (not interpreted)",
+    ],
+    "kind": "recognized",
+    "lineNo": 21,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 22,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 23,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "focus-events = on — pass terminal focus events to programs",
+    ],
+    "kind": "option",
+    "lineNo": 24,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 25,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 26,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "sets \`aggressive-resize\` to \`on\` (not interpreted)",
+    ],
+    "kind": "recognized",
+    "lineNo": 27,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 28,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 29,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "binds C-p (after the prefix) to \`previous-window\`",
+    ],
+    "kind": "binding",
+    "lineNo": 30,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "binds C-n (after the prefix) to \`next-window\`",
+    ],
+    "kind": "binding",
+    "lineNo": 31,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 32,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 33,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "binds R (after the prefix) to \`source-file "~/.tmux.conf"\`",
+    ],
+    "kind": "binding",
+    "lineNo": 34,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 35,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 36,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "binds C-a (after the prefix) to \`send-prefix\`",
+    ],
+    "kind": "binding",
+    "lineNo": 37,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "binds a (after the prefix) to \`last-window\`",
+    ],
+    "kind": "binding",
+    "lineNo": 38,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 39,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 40,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "plugin: tmux-plugins/tmux-sensible — plugin settings",
+    ],
+    "kind": "recognized",
+    "lineNo": 41,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 42,
+    "warnings": [],
+  },
+]
+`;
+
+exports[`explain-output snapshots > locks the per-line annotations for tpm-example.conf 1`] = `
+[
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 1,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "plugin: tmux-plugins/tpm — plugin settings",
+    ],
+    "kind": "recognized",
+    "lineNo": 2,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "plugin: tmux-plugins/tmux-sensible — plugin settings",
+    ],
+    "kind": "recognized",
+    "lineNo": 3,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 4,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 5,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 6,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 7,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 8,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 9,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 10,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "comment",
+    "lineNo": 11,
+    "warnings": [],
+  },
+  {
+    "explanation": [
+      "runs a plugin script — plugin settings",
+    ],
+    "kind": "recognized",
+    "lineNo": 12,
+    "warnings": [],
+  },
+  {
+    "explanation": [],
+    "kind": "blank",
+    "lineNo": 13,
+    "warnings": [],
+  },
+]
+`;
