@@ -57,7 +57,7 @@ function StatusBar() {
         <span style={{ color: TEXT_MUTED }}>2:tutorial</span>
       </div>
       <div style={{ display: "flex", color: TEXT_FAINT }}>
-        tmuxlab.dev
+        tmuxcheatsheet.dev
       </div>
     </div>
   );

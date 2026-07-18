@@ -39,7 +39,7 @@ import type { KeyBinding } from "@/lib/data/types";
 const REMEMBER_SOURCE_KEY = "tmuxlab:config:source:v1";
 
 const PARSER_VERSION = "tmuxlab config parser v1 (2026-07-06)";
-const REPORT_URL = "https://github.com/tmuxlab/tmuxlab/issues/new";
+const REPORT_URL = "https://github.com/mfullbrook/tmuxcheatsheet/issues/new";
 
 interface Explained {
   parsed: ParseResult;

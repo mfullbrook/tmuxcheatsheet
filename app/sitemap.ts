@@ -3,7 +3,7 @@ import { COMMAND_PAGES } from "@/lib/data/command-pages";
 import { GUIDES } from "@/lib/data/guides";
 import { LESSONS } from "@/lib/data/lessons";
 
-const BASE = "https://tmuxlab.dev";
+const BASE = "https://tmuxcheatsheet.dev";
 const LAST_MODIFIED = new Date("2026-07-05");
 
 export default function sitemap(): MetadataRoute.Sitemap {

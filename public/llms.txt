@@ -4,11 +4,11 @@
 
 ## Core pages
 
-- [Cheat sheet](https://tmuxlab.dev/): every default tmux keybinding and command, searchable, organized by sessions/windows/panes/copy-mode
-- [Commands by task](https://tmuxlab.dev/commands): one page per real task (split pane, copy paste, kill session, scroll, …) with keybinding, command, and gotchas
-- [Tutorial](https://tmuxlab.dev/tutorial): 5-lesson track plus an interactive in-browser tmux playground
-- [Config generator](https://tmuxlab.dev/config/generator): builds a commented .tmux.conf
-- [Guides](https://tmuxlab.dev/guides): sane config line-by-line, fixing colors ($TERM/RGB), tmux+neovim checkhealth fixes, tmux vs zellij, AI coding agents in tmux
+- [Cheat sheet](https://tmuxcheatsheet.dev/): every default tmux keybinding and command, searchable, organized by sessions/windows/panes/copy-mode
+- [Commands by task](https://tmuxcheatsheet.dev/commands): one page per real task (split pane, copy paste, kill session, scroll, …) with keybinding, command, and gotchas
+- [Tutorial](https://tmuxcheatsheet.dev/tutorial): 5-lesson track plus an interactive in-browser tmux playground
+- [Config generator](https://tmuxcheatsheet.dev/config/generator): builds a commented .tmux.conf
+- [Guides](https://tmuxcheatsheet.dev/guides): sane config line-by-line, fixing colors ($TERM/RGB), tmux+neovim checkhealth fixes, tmux vs zellij, AI coding agents in tmux
 
 ## Key facts
 

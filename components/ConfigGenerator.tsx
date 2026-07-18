@@ -39,7 +39,7 @@ const DEFAULTS: Options = {
 
 export function generate(o: Options): string {
   const L: string[] = [];
-  L.push("# ~/.tmux.conf — generated with tmuxlab.dev/config/generator");
+  L.push("# ~/.tmux.conf — generated with tmuxcheatsheet.dev/config/generator");
   L.push("# every line explained; delete anything you don't want\n");
 
   L.push("##### core #####\n");

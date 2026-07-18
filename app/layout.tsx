@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tmuxlab.dev"),
+  metadataBase: new URL("https://tmuxcheatsheet.dev"),
   title: {
     default: "tmuxlab — the tmux cheat sheet that speaks tmux",
     template: "%s · tmuxlab",

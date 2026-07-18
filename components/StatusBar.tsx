@@ -101,7 +101,7 @@ export function StatusBar() {
               {theme === "dark" ? "☾" : "☀"}
             </button>
             <a
-              href="https://github.com/"
+              href="https://github.com/mfullbrook/tmuxcheatsheet"
               className="hover:text-fg hidden sm:inline"
               title="Open source on GitHub"
             >
